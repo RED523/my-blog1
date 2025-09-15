@@ -49,7 +49,13 @@ ${closeImgTag(body.replace(/<br \/>/g, '\n'))}
 function main() {
 	const filePath = path.resolve(__dirname, blogOutputPath);
 	// 只查询自己的issues，避免别人创建的也更新到博客
-	const creators = ['chaseFunny', 'coderPerseus']; // 添加多个creator
+	const creators = [
+		'chaseFunny',
+		'coderPerseus',
+		'RED523',
+		'zhaozhongming',
+		'RED'
+	]; // 添加多个creator
 	fs.ensureDirSync(filePath);
 	fs.emptyDirSync(filePath);
 	creators.forEach((name) => {
