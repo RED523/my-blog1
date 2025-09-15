@@ -2,14 +2,14 @@ import type { SiteConfig } from '@/types/siteConfig';
 
 const url = new URL(
 	process.env.NODE_ENV === 'production'
-		? 'https://luckysnail.cn/'
+		? 'https://keteng.cn/'
 		: 'http://localhost:3000'
 );
 export const baseSiteConfig: SiteConfig = {
 	name: 'blog | 前端 | 开发者',
 	description:
-		'我是幸运的蜗牛，一名充满热情的前端开发工程师。我热衷于探索和体验最新技术，特别是人工智能（AI），并在日常工作中去使用它们，来提升我的工作效率。我的目标是积极参与开源社区，为开源项目贡献自己的力量。正如我的名字，我相信越努力，越幸运',
-	url: url.href, //'https://luckysnail.cn/',
+		'大家好，我是柯腾，一名充满热情的前端开发工程师。我热衷于探索和体验最新技术，特别是人工智能（AI），并在日常工作中去使用它们，来提升我的工作效率。我的目标是积极参与开源社区，为开源项目贡献自己的力量。我相信越努力，越幸运',
+	url: url.href, //'https://keteng.cn/',
 	// 网站预览图
 	ogImage: url.origin + '/og.png',
 	// https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
@@ -24,13 +24,13 @@ export const baseSiteConfig: SiteConfig = {
 		'学习笔记',
 		'程序员'
 	],
-	authors: 'LuckySnail',
+	authors: 'Keteng',
 	email: 'snailrun160@gmail.com',
-	authorsCN: '幸运的蜗牛',
-	authorsUrl: 'https://github.com/chaseFunny',
+	authorsCN: '柯腾啊',
+	authorsUrl: 'https://github.com/RED523',
 	social: [
 		{
-			href: 'https://github.com/chaseFunny',
+			href: 'https://github.com/RED523',
 			text: 'github',
 			icon: 'GitHubIcon'
 		},
@@ -43,11 +43,12 @@ export const baseSiteConfig: SiteConfig = {
 		{
 			href: 'wxPublic',
 			text: '微信公众号',
+			hide: true,
 			isPicture: true,
 			icon: 'WxMediaIcon'
 		},
 		{
-			href: 'snailrun160@gmail.com',
+			href: 'coderzzm@foxmail.com',
 			text: '邮箱',
 			icon: 'MailIcon'
 		},
@@ -59,23 +60,26 @@ export const baseSiteConfig: SiteConfig = {
 			icon: 'QqIcon'
 		},
 		{
-			href: 'https://juejin.cn/user/3606868169065389',
+			href: 'https://juejin.cn/user/1574925262918823',
 			text: '掘金',
 			icon: 'JueJinIcon'
 		},
 		{
 			href: 'https://x.com/haozhan05554957',
 			text: '推特（X）',
+			hide: true,
 			icon: 'XIcon'
 		},
 		{
 			href: 'https://www.zhihu.com/people/axing-zh',
 			text: '知乎',
+			hide: true,
 			icon: 'ZhihuIcon'
 		},
 		{
 			href: 'https://space.bilibili.com/1695997565',
 			text: '哔哩哔哩',
+			hide: true,
 			icon: 'BilibiliIcon'
 		},
 		{
@@ -105,8 +109,8 @@ export const baseSiteConfig: SiteConfig = {
 	defaultNextTheme: 'system', // next-theme option: system | dark | light
 	icons: {
 		icon: '/favicon.ico',
-		shortcut: '/logo.png',
-		apple: '/logo.png'
+		shortcut: '/keteng.png',
+		apple: '/keteng.png'
 	},
 	navigationItems: [
 		{ href: '/', text: '首页' },
@@ -132,7 +136,7 @@ export const baseSiteConfig: SiteConfig = {
 	},
 	footerItems: [{ href: '/', text: '首页' }],
 	locale: 'zh-CN',
-	siteHostList: ['luckysnail.cn', 'lucky-snail.vercel.app']
+	siteHostList: ['keteng.cn', 'lucky-snail.vercel.app']
 };
 
 const siteMetadata: SiteConfig = {

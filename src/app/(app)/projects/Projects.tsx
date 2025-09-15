@@ -1,7 +1,7 @@
 import codeCopyIcon from '@/assets/products/codecopy.png';
 import resumeIcon from '@/assets/products/resume.png';
 import React from 'react';
-import luckySnailBlogIcon from '~/public/logo.png';
+import luckySnailBlogIcon from '~/public/keteng.png';
 import npmIcon from '~/public/npmIcon.webp';
 import svgShowIcon from '~/public/svgShow.png';
 import { ProjectCard } from './ProjectCard';
@@ -19,7 +19,7 @@ export function Projects(): React.ReactElement {
 		},
 		{
 			id: '4',
-			url: 'https://ascii.luckysnail.cn/',
+			url: 'https://ascii.keteng.cn/',
 			icon: luckySnailBlogIcon,
 			name: 'ASCII 字符生成器',
 			description: '把图片和视频转为 ASCII 形式',
@@ -35,9 +35,9 @@ export function Projects(): React.ReactElement {
 		},
 		{
 			id: '3',
-			url: 'https://www.luckySnail.cn',
+			url: 'https://www.keteng.cn',
 			icon: luckySnailBlogIcon,
-			name: 'luckySnail 的个人博客',
+			name: 'keteng 的个人博客',
 			description: '基于 Next.js 创建的博客网站，',
 			tags: ['个人']
 		},

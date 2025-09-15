@@ -11,7 +11,7 @@ type ComponentProps<P = object> = PropsWithChildren<
 import {
 	default as portraitAltImage,
 	default as portraitImage
-} from '/public/logo.webp';
+} from '/public/keteng.webp';
 
 function AvatarContainer({ className, ...props }: ComponentProps) {
 	return (
