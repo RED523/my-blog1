@@ -1,11 +1,12 @@
-name: Sync Post
+name: Sync Post # 工作流名称
 
 # Controls when the workflow will run
-on:
+on: # 监听事件
+  # 参考：https://crontab.guru/
   # schedule:
   #   - cron: "30 1 * * *"
   # https://docs.github.com/cn/developers/webhooks-and-events/events/issue-event-types
-  issues:
+  issues: # 监听 issue 事件
     types:
       - opened
       - closed
@@ -15,20 +16,20 @@ on:
       - unlabeled
       - reopened
       - committed # 修改？
-  workflow_dispatch:
-env:
+  workflow_dispatch: # 手动触发
+env: # 全局环境变量
   GH_TOKEN: ${{ secrets.GH_TOKEN }}
   GH_USER: ${{ secrets.GH_USER }}
   GH_PROJECT_NAME: ${{ secrets.GH_PROJECT_NAME }}
-jobs:
+jobs: # 定义任务（作业）
   Publish:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest # 使用最新的 Ubuntu 版本
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2 # 使用最新的 v2 版本
 
-      - name: Setup Node.js 🚀
-        uses: actions/setup-node@v3
+      - name: Setup Node.js 🚀 
+        uses: actions/setup-node@v3 # 使用最新的 v3 版本
         with:
           node-version: '20.11.0' # 指定具体的版本号
 
@@ -58,7 +59,7 @@ jobs:
           git add .
           git commit -m 'chore(ci): blog sync'
 
-      - name: Pull latest changes from remote
+      - name: Pull latest changes from remote # 拉取远程最新的更改
         run: git pull --rebase origin main
 
       - name: Push changes to remote
