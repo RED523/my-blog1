@@ -105,6 +105,28 @@ export function Headline() {
 					)
 				)}
 			</motion.div>
+			{/* 引入一张图片 */}
+			<motion.div
+				className="flex"
+				initial={{ opacity: 0, y: 20 }}
+				animate={{ opacity: 1, y: 0 }}
+				transition={{
+					type: 'spring',
+					damping: 30,
+					stiffness: 85,
+					duration: 0.3,
+					delay: 0.2
+				}}
+			>
+				<img
+					src="https://raw.githubusercontent.com/tuntun0609/tuntun0609/output/github-contribution-grid-snake.svg"
+					alt="https://github.com/tuntun0609/tuntun0609/blob/output/github-snake.svg"
+					unoptimized
+					width="80%"
+					height="auto"
+					className="mb-4 cursor-pointer-12"
+				/>
+			</motion.div>
 		</div>
 	);
 }
