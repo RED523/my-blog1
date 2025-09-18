@@ -1,0 +1,52 @@
+---
+title: 理解 ECMASript中的迭代器
+date: 2025-09-18T14:56:05Z
+slug: post-10
+author: RED523：https://github.com/RED523
+tags: []
+---
+
+前言
+在 ECMAScript6规范中新增了一个高级属性：迭代器
+什么是迭代器
+我的个人理解是：能够实现 Iterable 接口的数据结构，可以使用迭代器。
+一些内置类型（字符串，数组，映射，集合，argument 对象，NodeList等 DOM 集合类型）实现了Iterable接口。在 ECMAScript 中，暴露了一个默认迭代器，这个迭代器用 Symbol.iterator 作为键，然后实现了一个迭代器工厂函数，调用这个工厂函数，会返回一个新的迭代器。
+let str = 'hello world';
+
+// 迭代器工厂函数
+console.log(str[Symbol.iterator]); // [Function: [Symbol.iterator]]
+
+// 调用这个迭代器工厂函数，会返回一个新的迭代器
+console.log(str[Symbol.iterator]()); // Object [String Iterator] {}
+可迭代协议
+实现可迭代协议的所以类型，会自动兼容可迭代对象的原生语言特性，比如：
+● for-of 循环
+● 数组解构
+● 扩展操作符
+● Array.from()
+● 创建映射
+● 创建集合
+● Promise.all() 接收由期约组成的可迭代对象
+● Promise.race() 接收由期约组成的可迭代对象
+这些原生语言特性在后台会自动调用迭代器工厂函数，从而创建一个迭代器。大白话就是，只有实现 Iterable 接口的类型，才可以使用这些原生语言特性
+迭代器协议
+通过调用迭代器工厂函数，创建了一个迭代器。迭代器API使用 next() 方法在可迭代对象中遍历数据，每次会返回一个迭代结果值 IteratorResult对象，包含两个属性：done 和 value。done 为 true，表示还有迭代还没有结束，反之已完成；value 则返回迭代的实际值
+let str = 'hello';
+
+// 调用迭代器工厂函数，并返回一个新的迭代器。
+strItr = str[Symbol.iterator]();
+
+console.log(strItr.next()); // { value: 'h', done: false }
+console.log(strItr.next()); // { value: 'e', done: false }
+console.log(strItr.next()); // { value: 'l', done: false }
+console.log(strItr.next()); // { value: 'l', done: false }
+console.log(strItr.next()); // { value: '0', done: false }
+console.log(strItr.next()); // { value: 'undefined', done: true }
+这种方式是不知道迭代对象的长度的，只能手动一个一个调用，直到 done: true ，才表示已经迭代了全部值了
+总结
+其实，对于自身实现了 Iterable 接口的结构来说，调用一些原生语言特性的时候，是自动执行了迭代器工厂函数，然后返回一个迭代器，然后再不断调用迭代器 API中的next()方法，来遍历可迭代对象的。
+对于迭代器的理解，我是这么理解的。后面有了新的理解，会不断更新...
+
+
+---
+此文自动发布于：<a href="https://github.com/RED523/my-blog1/issues/10" target="_blank">github issues</a>
