@@ -105,6 +105,28 @@ export function Headline() {
 					)
 				)}
 			</motion.div>
+			{/* 引入 skillicons */}
+			<motion.div
+				className="mt-6 flex flex-wrap gap-3"
+				initial={{ opacity: 0, y: 20 }}
+				animate={{ opacity: 1, y: 0 }}
+				transition={{
+					type: 'spring',
+					damping: 30,
+					stiffness: 85,
+					duration: 0.3,
+					delay: 0.2
+				}}
+			>
+				<img
+					src="https://skillicons.dev/icons?i=js,html,css,nodejs,tailwind,ts,sass,react,vue,nextjs)"
+					alt="skills icons"
+					unoptimized
+					width="80%"
+					height="auto"
+					className="mb-4 cursor-pointer"
+				/>
+			</motion.div>
 			{/* 引入一张图片 */}
 			<motion.div
 				className="flex"
@@ -119,12 +141,12 @@ export function Headline() {
 				}}
 			>
 				<img
-					src="https://raw.githubusercontent.com/tuntun0609/tuntun0609/output/github-contribution-grid-snake.svg"
-					alt="https://github.com/tuntun0609/tuntun0609/blob/output/github-snake.svg"
+					src="https://raw.githubusercontent.com/RED523/RED523/refs/heads/output/github-contribution-grid-snake.svg"
+					alt="github contribution grid snake animation"
 					unoptimized
 					width="80%"
 					height="auto"
-					className="mb-4 cursor-pointer-12"
+					className="mb-4 cursor-pointer"
 				/>
 			</motion.div>
 		</div>
