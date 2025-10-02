@@ -8,7 +8,7 @@ const url = new URL(
 export const baseSiteConfig: SiteConfig = {
 	name: 'blog | 前端 | 开发者',
 	description:
-		'大家好，我是柯腾，一名充满热情的前端开发工程师。我热衷于探索和体验最新技术，特别是人工智能（AI），并在日常工作中去使用它们，来提升我的工作效率。我的目标是积极参与开源社区，为开源项目贡献自己的力量。我相信越努力，越幸运',
+		'嘿，大家好，我是柯腾，一名工作3年多的前端开发者。在这里，我将记录我的学习笔记、项目经验、对前端技术的见解以及一些日常生活。希望通过这个平台，与更多志同道合的朋友交流，共同成长！',
 	url: url.href, //'https://keteng.cn/',
 	// 网站预览图
 	ogImage: url.origin + '/og.png',
@@ -26,13 +26,29 @@ export const baseSiteConfig: SiteConfig = {
 	],
 	authors: 'Keteng',
 	email: 'snailrun160@gmail.com',
-	authorsCN: '柯腾啊',
+	authorsCN: '柯腾呐',
 	authorsUrl: 'https://github.com/RED523',
 	social: [
 		{
 			href: 'https://github.com/RED523',
 			text: 'github',
 			icon: 'GitHubIcon'
+		},
+		{
+			href: 'douyin',
+			text: '抖音',
+			isPicture: true,
+			icon: 'TiktokIcon'
+		},
+		{
+			href: 'https://blog.csdn.net/weixin_46661464?spm=1000.2115.3001.5343',
+			text: 'CSDN',
+			icon: 'CsdnIcon'
+		},
+		{
+			href: 'https://juejin.cn/user/1574925262918823',
+			text: '掘金',
+			icon: 'JueJinIcon'
 		},
 		{
 			href: 'wx',
@@ -48,21 +64,11 @@ export const baseSiteConfig: SiteConfig = {
 			icon: 'WxMediaIcon'
 		},
 		{
-			href: 'coderzzm@foxmail.com',
-			text: '邮箱',
-			icon: 'MailIcon'
-		},
-		{
 			href: 'qq',
 			text: 'QQ',
 			isPicture: true,
 			hide: true,
 			icon: 'QqIcon'
-		},
-		{
-			href: 'https://juejin.cn/user/1574925262918823',
-			text: '掘金',
-			icon: 'JueJinIcon'
 		},
 		{
 			href: 'https://x.com/haozhan05554957',
@@ -89,17 +95,15 @@ export const baseSiteConfig: SiteConfig = {
 			icon: 'YouTubeIcon'
 		},
 		{
-			href: 'douyin',
-			text: '抖音',
-			isPicture: true,
-			hide: true,
-			icon: 'TiktokIcon'
-		},
-		{
 			href: 'https://www.xiaohongshu.com/user/profile/5e2d938d000000000100ac82',
 			text: '小红书',
 			hide: true,
 			icon: 'RedBookIcon'
+		},
+		{
+			href: 'coderzzm@foxmail.com',
+			text: '邮箱',
+			icon: 'MailIcon'
 		}
 	],
 	themeColors: [
