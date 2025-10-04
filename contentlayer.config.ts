@@ -10,14 +10,15 @@ export const Post = defineDocumentType(() => ({
 	filePathPattern: `**/*.mdx`,
 	contentType: 'mdx',
 
+	// 文章必须包含的字段
 	fields: {
 		title: { type: 'string', required: true },
-		description: { type: 'string', required: false },
 		tags: { type: 'list', of: { type: 'string' }, required: true },
 		slug: { type: 'string', required: true },
 		author: { type: 'string', required: true },
-		cover: { type: 'string', required: false },
-		date: { type: 'date', required: true }
+		date: { type: 'date', required: true },
+		description: { type: 'string', required: false },
+		cover: { type: 'string', required: false }
 	},
 	computedFields: {
 		url: {
@@ -32,9 +33,8 @@ export const Post = defineDocumentType(() => ({
 }));
 
 export default makeSource({
-	// contentDirPath: 'posts',
-	contentDirPath: '.',
-	contentDirInclude: ['posts', 'data/blog'],
+	contentDirPath: '.', //指定内容根目录
+	contentDirInclude: ['posts', 'data/blog'], //指定内容目录
 	documentTypes: [Post],
 	mdx: {
 		remarkPlugins: [remarkGfm],
