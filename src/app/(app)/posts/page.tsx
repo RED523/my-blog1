@@ -1,6 +1,6 @@
+import { HourglassIcon } from '@/assets';
 import { Container } from '@/components/Container';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
-import { Separator } from '@/components/ui/separator';
 import { cn } from '@/lib/utils';
 import { allPosts, type Post } from 'contentlayer/generated';
 import dayjs from 'dayjs';
@@ -8,7 +8,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import CoverSwitch from './CoverSwitch';
 import { Tag } from './TagItem';
-
 export interface PostItem {
 	title: string;
 	date: string;
@@ -51,7 +50,11 @@ function PostCard({ post, showCover }: { post: Post; showCover?: boolean }) {
 					<time dateTime={post.date} className=" block text-xs text-gray-600">
 						{dayjs(post.date).format('YYYY-MM-DD')}
 					</time>
-					<Separator orientation="vertical" className="h-5" />
+					<div className=" text-xs text-gray-600 flex items-center">
+						<HourglassIcon className="mr-2" /> {post.readingTime?.text}
+					</div>
+				</div>
+				<div className="flex gap-2 mt-2 flex-wrap">
 					{post.tags.map((tag) => (
 						<Tag key={tag}>{tag}</Tag>
 					))}
